@@ -523,6 +523,8 @@ eb open
 ---
 ## Actividades Encargadas
 1. Construir el archivo terraform (archivo main.tf) para aprovisionar la insfraestructura mediante Github Actions (archivo infra.yml) en AWS (4ptos)
+
+![Diagrama](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u2-02-MarceloCuadros/blob/main/diagrama.png)
    
 <details><summary>Terraform plan output: clic aqui</summary>
 
