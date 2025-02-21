@@ -527,7 +527,6 @@ eb open
 <details><summary>Infra/main.tf: clic aqui</summary>
 
 ```Yaml
-
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
  + create
@@ -560,7 +559,7 @@ Terraform will perform the following actions:
      + engine_version_actual                 = (known after apply)
      + hosted_zone_id                        = (known after apply)
      + id                                    = (known after apply)
-     + identifier                            = "rds-valverde"
+     + identifier                            = "rds-cuadros"
      + identifier_prefix                     = (known after apply)
      + instance_class                        = "db.t3.micro"
      + iops                                  = (known after apply)
@@ -603,14 +602,14 @@ Terraform will perform the following actions:
      + arn         = (known after apply)
      + description = "Aplicación en Elastic Beanstalk"
      + id          = (known after apply)
-     + name        = "eb-valverde"
+     + name        = "eb-cuadros"
      + tags_all    = (known after apply)
    }
 
  # aws_elastic_beanstalk_environment.webapp_env will be created
  + resource "aws_elastic_beanstalk_environment" "webapp_env" {
      + all_settings           = (known after apply)
-     + application            = "eb-valverde"
+     + application            = "eb-cuadros"
      + arn                    = (known after apply)
      + autoscaling_groups     = (known after apply)
      + cname                  = (known after apply)
@@ -620,7 +619,7 @@ Terraform will perform the following actions:
      + instances              = (known after apply)
      + launch_configurations  = (known after apply)
      + load_balancers         = (known after apply)
-     + name                   = "eb-env-valverde"
+     + name                   = "eb-env-cuadros"
      + platform_arn           = (known after apply)
      + queues                 = (known after apply)
      + solution_stack_name    = "64bit Amazon Linux 2023 v3.3.0 running .NET 8"
@@ -674,76 +673,6 @@ Terraform will perform the following actions:
        }
    }
 
- # aws_security_group.webapp_sg will be created
- + resource "aws_security_group" "webapp_sg" {
-     + arn                    = (known after apply)
-     + description            = "Security group para Elastic Beanstalk y MySQL"
-     + egress                 = [
-         + {
-             + cidr_blocks      = [
-                 + "0.0.0.0/0",
-               ]
-             + from_port        = 0
-             + ipv6_cidr_blocks = []
-             + prefix_list_ids  = []
-             + protocol         = "-1"
-             + security_groups  = []
-             + self             = false
-             + to_port          = 0
-               # (1 unchanged attribute hidden)
-           },
-       ]
-     + id                     = (known after apply)
-     + ingress                = [
-         + {
-             + cidr_blocks      = [
-                 + "0.0.0.0/0",
-               ]
-             + from_port        = 3306
-             + ipv6_cidr_blocks = []
-             + prefix_list_ids  = []
-             + protocol         = "tcp"
-             + security_groups  = []
-             + self             = false
-             + to_port          = 3306
-               # (1 unchanged attribute hidden)
-           },
-         + {
-             + cidr_blocks      = [
-                 + "0.0.0.0/0",
-               ]
-             + from_port        = 443
-             + ipv6_cidr_blocks = []
-             + prefix_list_ids  = []
-             + protocol         = "tcp"
-             + security_groups  = []
-             + self             = false
-             + to_port          = 443
-               # (1 unchanged attribute hidden)
-           },
-         + {
-             + cidr_blocks      = [
-                 + "0.0.0.0/0",
-               ]
-             + from_port        = 80
-             + ipv6_cidr_blocks = []
-             + prefix_list_ids  = []
-             + protocol         = "tcp"
-             + security_groups  = []
-             + self             = false
-             + to_port          = 80
-               # (1 unchanged attribute hidden)
-           },
-       ]
-     + name                   = "cuadros-sg"
-     + name_prefix            = (known after apply)
-     + owner_id               = (known after apply)
-     + revoke_rules_on_delete = false
-     + tags_all               = (known after apply)
-     + vpc_id                 = (known after apply)
-   }
-
-Plan: 4 to add, 0 to change, 0 to destroy.
 ```
 </details>
   
@@ -1004,7 +933,7 @@ jobs:
 
      - name: Publicar diagrama detallado Mermaid en GitHub Summary
        run: |
-         echo "## 🏗️ Infraestructura Desplegada - Diagrama Completo" >> $GITHUB_STEP_SUMMARY
+         echo "
          cat infra/inframap.mmd >> $GITHUB_STEP_SUMMARY
 
      - name: Terraform Apply
