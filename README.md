@@ -523,7 +523,7 @@ eb open
 ---
 ## Actividades Encargadas
 1. Construir el archivo terraform (archivo main.tf) para aprovisionar la insfraestructura mediante Github Actions (archivo infra.yml) en AWS (4ptos)
-   <details><summary>Terraform plan output: clic aqui</summary>
+   <details><summary>Terraform plan output: clic aqui
 
 ```Yaml
 
@@ -776,7 +776,6 @@ name                = "eb-env-cuadros"
 application         = aws_elastic_beanstalk_application.webapp.name
 solution_stack_name = "64bit Amazon Linux 2023 v3.3.0 running .NET 8"
 
-# Modo "Single Instance" sin Load Balancer para reducir costos
 setting {
   namespace = "aws:elasticbeanstalk:environment"
   name      = "EnvironmentType"
