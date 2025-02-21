@@ -313,6 +313,9 @@ public class TipoMovimiento
     }
 }
 ```
+
+![TipoMovimiento](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/tipomovimiento.png)
+
 4. En Visual Studio Code, dentro del proyecto Financiera.WebApp, crear la carpeta Mapeos, y dentro de esta crear los siguientes archivos con lo siguientes contenidos:
 > ClienteConfiguracion.cs
 ```CSharp
@@ -388,6 +391,9 @@ public class TipoMovimientoConfiguracion : IEntityTypeConfiguration<TipoMovimien
     }
 }
 ```
+![TipoMovimientoC](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/tipomovimientoc.png)
+
+
 7. En Visual Studio Code, dentro del proyecto Financiera.WebApp, en la raiz crear el siguiente archivo y contenido:
 > FinancieraContexto.cs
 ```CSharp
@@ -507,11 +513,13 @@ cd ..
         </div>
 ```
 
+![Nav](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/nav.png)
+
 17. En el terminal, para revisar la aplicación utilizar el siguiente comando:
 ```
 eb open
 ```
-
+![App](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/app.png)
 ---
 ## Actividades Encargadas
 1. Construir el archivo terraform (archivo main.tf) para aprovisionar la insfraestructura mediante Github Actions (archivo infra.yml) en AWS (4ptos)
