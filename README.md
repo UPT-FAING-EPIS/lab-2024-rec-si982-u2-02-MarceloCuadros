@@ -513,7 +513,7 @@ cd ..
         </div>
 ```
 
-![App](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/navmenu.png)
+![NavMenu](https://https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u2-02-MarceloCuadros/blob/main/navmenu.png)
 
 17. En el terminal, para revisar la aplicación utilizar el siguiente comando:
 ```
