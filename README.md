@@ -314,7 +314,7 @@ public class TipoMovimiento
 }
 ```
 
-![TipoMovimiento](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/tipomovimiento.png)
+![TipoMovimiento](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u2-02-MarceloCuadros/blob/main/tipomovimiento.png)
 
 4. En Visual Studio Code, dentro del proyecto Financiera.WebApp, crear la carpeta Mapeos, y dentro de esta crear los siguientes archivos con lo siguientes contenidos:
 > ClienteConfiguracion.cs
@@ -391,7 +391,7 @@ public class TipoMovimientoConfiguracion : IEntityTypeConfiguration<TipoMovimien
     }
 }
 ```
-![TipoMovimientoC](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/tipomovimientoc.png)
+![TipoMovimientoC](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u2-02-MarceloCuadros/blob/main/tipomovimientoc.png)
 
 
 7. En Visual Studio Code, dentro del proyecto Financiera.WebApp, en la raiz crear el siguiente archivo y contenido:
@@ -513,16 +513,436 @@ cd ..
         </div>
 ```
 
-![Nav](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/navmenu.png)
+![NavMenu](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u2-02-MarceloCuadros/blob/main/navmenu.png)
 
 17. En el terminal, para revisar la aplicación utilizar el siguiente comando:
 ```
 eb open
 ```
-![App](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/app.png)
+![App](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u2-02-MarceloCuadros/blob/main/app.png)
 ---
 ## Actividades Encargadas
 1. Construir el archivo terraform (archivo main.tf) para aprovisionar la insfraestructura mediante Github Actions (archivo infra.yml) en AWS (4ptos)
+   
+<details><summary>Terraform plan output: clic aqui</summary>
+
+```Yaml
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+ + create
+
+Terraform will perform the following actions:
+
+ # aws_db_instance.rds will be created
+ + resource "aws_db_instance" "rds" {
+     + address                               = (known after apply)
+     + allocated_storage                     = 10
+     + apply_immediately                     = false
+     + arn                                   = (known after apply)
+     + auto_minor_version_upgrade            = true
+     + availability_zone                     = (known after apply)
+     + backup_retention_period               = (known after apply)
+     + backup_target                         = (known after apply)
+     + backup_window                         = (known after apply)
+     + ca_cert_identifier                    = (known after apply)
+     + character_set_name                    = (known after apply)
+     + copy_tags_to_snapshot                 = false
+     + db_name                               = (known after apply)
+     + db_subnet_group_name                  = (known after apply)
+     + dedicated_log_volume                  = false
+     + delete_automated_backups              = true
+     + domain_fqdn                           = (known after apply)
+     + endpoint                              = (known after apply)
+     + engine                                = "mysql"
+     + engine_lifecycle_support              = (known after apply)
+     + engine_version                        = "8.0.35"
+     + engine_version_actual                 = (known after apply)
+     + hosted_zone_id                        = (known after apply)
+     + id                                    = (known after apply)
+     + identifier                            = "rds-cuadros"
+     + identifier_prefix                     = (known after apply)
+     + instance_class                        = "db.t3.micro"
+     + iops                                  = (known after apply)
+     + kms_key_id                            = (known after apply)
+     + latest_restorable_time                = (known after apply)
+     + license_model                         = (known after apply)
+     + listener_endpoint                     = (known after apply)
+     + maintenance_window                    = (known after apply)
+     + master_user_secret                    = (known after apply)
+     + master_user_secret_kms_key_id         = (known after apply)
+     + monitoring_interval                   = 0
+     + monitoring_role_arn                   = (known after apply)
+     + multi_az                              = (known after apply)
+     + nchar_character_set_name              = (known after apply)
+     + network_type                          = (known after apply)
+     + option_group_name                     = (known after apply)
+     + parameter_group_name                  = (known after apply)
+     + password                              = (sensitive value)
+     + performance_insights_enabled          = false
+     + performance_insights_kms_key_id       = (known after apply)
+     + performance_insights_retention_period = (known after apply)
+     + port                                  = (known after apply)
+     + publicly_accessible                   = true
+     + replica_mode                          = (known after apply)
+     + replicas                              = (known after apply)
+     + resource_id                           = (known after apply)
+     + skip_final_snapshot                   = true
+     + snapshot_identifier                   = (known after apply)
+     + status                                = (known after apply)
+     + storage_throughput                    = (known after apply)
+     + storage_type                          = (known after apply)
+     + tags_all                              = (known after apply)
+     + timezone                              = (known after apply)
+     + username                              = "***"
+     + vpc_security_group_ids                = (known after apply)
+   }
+
+ # aws_elastic_beanstalk_application.webapp will be created
+ + resource "aws_elastic_beanstalk_application" "webapp" {
+     + arn         = (known after apply)
+     + description = "Aplicación en Elastic Beanstalk"
+     + id          = (known after apply)
+     + name        = "eb-cuadros"
+     + tags_all    = (known after apply)
+   }
+
+ # aws_elastic_beanstalk_environment.webapp_env will be created
+ + resource "aws_elastic_beanstalk_environment" "webapp_env" {
+     + all_settings           = (known after apply)
+     + application            = "eb-cuadros"
+     + arn                    = (known after apply)
+     + autoscaling_groups     = (known after apply)
+     + cname                  = (known after apply)
+     + cname_prefix           = (known after apply)
+     + endpoint_url           = (known after apply)
+     + id                     = (known after apply)
+     + instances              = (known after apply)
+     + launch_configurations  = (known after apply)
+     + load_balancers         = (known after apply)
+     + name                   = "eb-env-cuadros"
+     + platform_arn           = (known after apply)
+     + queues                 = (known after apply)
+     + solution_stack_name    = "64bit Amazon Linux 2023 v3.3.0 running .NET 8"
+     + tags_all               = (known after apply)
+     + tier                   = "WebServer"
+     + triggers               = (known after apply)
+     + version_label          = (known after apply)
+     + wait_for_ready_timeout = "20m"
+
+     + setting {
+         + name      = "EnvironmentType"
+         + namespace = "aws:elasticbeanstalk:environment"
+         + value     = "SingleInstance"
+           # (1 unchanged attribute hidden)
+       }
+     + setting {
+         + name      = "IamInstanceProfile"
+         + namespace = "aws:autoscaling:launchconfiguration"
+         + value     = "LabInstanceProfile"
+           # (1 unchanged attribute hidden)
+       }
+     + setting {
+         + name      = "InstanceType"
+         + namespace = "aws:autoscaling:launchconfiguration"
+         + value     = "t3.micro"
+           # (1 unchanged attribute hidden)
+       }
+     + setting {
+         + name      = "RDS_DB_NAME"
+         + namespace = "aws:elasticbeanstalk:application:environment"
+         + value     = (known after apply)
+           # (1 unchanged attribute hidden)
+       }
+     + setting {
+         + name      = "RDS_HOSTNAME"
+         + namespace = "aws:elasticbeanstalk:application:environment"
+         + value     = (known after apply)
+           # (1 unchanged attribute hidden)
+       }
+     + setting {
+         + name      = "RDS_PASSWORD"
+         + namespace = "aws:elasticbeanstalk:application:environment"
+         + value     = "***"
+           # (1 unchanged attribute hidden)
+       }
+     + setting {
+         + name      = "RDS_USERNAME"
+         + namespace = "aws:elasticbeanstalk:application:environment"
+         + value     = "***"
+           # (1 unchanged attribute hidden)
+       }
+   }
+
+```
+</details>
+  
+<details><summary>Infra/main.tf: clic aqui</summary>
+
+```Yaml
+
+provider "aws" {
+region = "us-east-1"
+}
+
+variable "instance_type" {
+default = "t3.micro" # Free Tier
+}
+
+variable "db_username" {
+default = "marcelocuadros"
+}
+
+variable "db_password" {
+default = "marcelo99++"
+}
+
+resource "aws_elastic_beanstalk_application" "webapp" {
+name        = "eb-cuadros"
+description = "Aplicación en Elastic Beanstalk"
+}
+
+resource "aws_elastic_beanstalk_environment" "webapp_env" {
+name                = "eb-env-cuadros"
+application         = aws_elastic_beanstalk_application.webapp.name
+solution_stack_name = "64bit Amazon Linux 2023 v3.3.0 running .NET 8"
+
+setting {
+  namespace = "aws:elasticbeanstalk:environment"
+  name      = "EnvironmentType"
+  value     = "SingleInstance"
+}
+
+setting {
+  namespace = "aws:autoscaling:launchconfiguration"
+  name      = "InstanceType"
+  value     = var.instance_type
+}
+
+setting {
+  namespace = "aws:autoscaling:launchconfiguration"
+  name      = "IamInstanceProfile"
+  value     = "LabInstanceProfile"
+}
+
+setting {
+  namespace = "aws:elasticbeanstalk:application:environment"
+  name      = "RDS_HOSTNAME"
+  value     = aws_db_instance.rds.address
+}
+
+setting {
+  namespace = "aws:elasticbeanstalk:application:environment"
+  name      = "RDS_DB_NAME"
+  value     = aws_db_instance.rds.db_name
+}
+
+setting {
+  namespace = "aws:elasticbeanstalk:application:environment"
+  name      = "RDS_USERNAME"
+  value     = var.db_username
+}
+
+setting {
+  namespace = "aws:elasticbeanstalk:application:environment"
+  name      = "RDS_PASSWORD"
+  value     = var.db_password
+}
+}
+
+resource "aws_security_group" "webapp_sg" {
+name        = "cuadros-sg" 
+description = "Security group para Elastic Beanstalk y MySQL"
+
+# Permitir tráfico HTTP
+ingress {
+  from_port   = 80
+  to_port     = 80
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+ingress {
+  from_port   = 443
+  to_port     = 443
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+ingress {
+  from_port   = 3306
+  to_port     = 3306
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"] # Permite acceso público a MySQL
+}
+
+egress {
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+}
+}
+
+resource "aws_db_instance" "rds" {
+identifier             = "rds-cuadros"
+engine                = "mysql"
+engine_version        = "8.0.35" 
+instance_class        = "db.t3.micro" 
+allocated_storage     = 10  # Free Tier (mínimo permitido)
+username             = var.db_username
+password             = var.db_password
+publicly_accessible  = true  # Permite conexiones externas
+skip_final_snapshot  = true  # Evitar cargos extra
+vpc_security_group_ids = [aws_security_group.webapp_sg.id]
+}
+```
+</details>
+
+<details><summary>Deploy.yml: clic aqui</summary>
+
+```Yaml
+name: Construcción infraestructura en AWS
+
+on:
+ push:
+   branches: [ "main" ]
+   paths:
+     - 'infra/**'
+     - '.github/workflows/deploy.yml'
+ workflow_dispatch:
+
+jobs:
+ Deploy-infra:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v4
+
+     - name: Configurar AWS CLI con credenciales temporales
+       run: |
+         aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+         aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+         aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN }}
+         aws configure set region ${{ secrets.AWS_REGION }}
+
+     - name: Verificar conexión a AWS
+       run: aws sts get-caller-identity
+
+     - name: Crear terraform.tfvars
+       run: |
+         cd infra
+         echo "db_username=\"${{ secrets.DB_USERNAME }}\"" > terraform.tfvars
+         echo "db_password=\"${{ secrets.DB_PASSWORD }}\"" >> terraform.tfvars
+
+     - name: Setup Terraform
+       uses: hashicorp/setup-terraform@v3
+
+     - name: Terraform Init
+       id: init
+       run: cd infra && terraform init 
+
+     - name: Terraform Validate
+       id: validate
+       run: cd infra && terraform validate -no-color
+
+     - name: Terraform Plan
+       run: cd infra && terraform plan -no-color -out main.tfplan
+
+     - name: Crear String Output
+       id: tf-plan-string
+       run: |
+           TERRAFORM_PLAN=$(cd infra && terraform show -no-color main.tfplan)
+           delimiter="$(openssl rand -hex 8)"
+           echo "summary<<${delimiter}" >> $GITHUB_OUTPUT
+           echo "## Terraform Plan Output" >> $GITHUB_OUTPUT
+           echo "<details><summary>Click to expand</summary>" >> $GITHUB_OUTPUT
+           echo "" >> $GITHUB_OUTPUT
+           echo '```terraform' >> $GITHUB_OUTPUT
+           echo "$TERRAFORM_PLAN" >> $GITHUB_OUTPUT
+           echo '```' >> $GITHUB_OUTPUT
+           echo "</details>" >> $GITHUB_OUTPUT
+           echo "${delimiter}" >> $GITHUB_OUTPUT
+
+     - name: Publish Terraform Plan to Task Summary
+       env:
+         SUMMARY: ${{ steps.tf-plan-string.outputs.summary }}
+       run: |
+         echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
+
+     - name: Setup Infracost
+       uses: infracost/actions/setup@v3
+       with:
+         api-key: ${{ secrets.INFRACOST_API_KEY }}
+
+     - name: Infracost Breakdown
+       run: |
+         cd infra
+         infracost breakdown --path . --format html --out-file infracost-report.html
+         sed -i '19,137d' infracost-report.html
+         sed -i 's/$0/$ 0/g' infracost-report.html
+
+     - name: Convert HTML to Markdown
+       id: html2markdown
+       uses: rknj/html2markdown@v1.1.0
+       with:
+         html-file: "infra/infracost-report.html"
+
+     - name: Upload Infracost Report
+       run: |
+         echo "## Infracost Report" >> $GITHUB_STEP_SUMMARY
+         echo "${{ steps.html2markdown.outputs.markdown-content }}" >> infracost.md
+         cat infracost.md >> $GITHUB_STEP_SUMMARY
+
+     - name: Setup Graphviz
+       uses: ts-graphviz/setup-graphviz@v2        
+
+     - name: Setup inframap
+       run: |
+         curl -L -o /tmp/inframap.tar.gz "https://github.com/cycloidio/inframap/releases/download/v0.7.0/inframap-linux-amd64.tar.gz"
+         tar -xzvf /tmp/inframap.tar.gz -C /tmp
+         mv -v /tmp/inframap-linux-amd64 /usr/local/bin/inframap
+         chmod +x /usr/local/bin/inframap
+
+     - name: Generar diagrama de infraestructura
+       run: |
+         cd infra
+         /usr/local/bin/inframap generate main.tf --raw | dot -Tsvg > inframap_aws.svg
+
+     - name: Upload inframap
+       id: inframap-upload-step
+       uses: actions/upload-artifact@v4
+       with:
+         name: inframap_aws.svg
+         path: infra/inframap_aws.svg
+
+     - name: Generar diagrama de infraestructura detallado en formato Mermaid
+       run: |
+         cd infra
+         echo "
+         echo "```mermaid" >> inframap.mmd
+         echo "graph TD;" >> inframap.mmd
+         
+         inframap generate main.tf --json | jq -r '
+           .resources | to_entries[] | 
+           "    " + .key + " -->|connected to| " + 
+           (.value.providers[0] // "unknown") + 
+           " : " + (.value.mode // "managed") + " : " + 
+           (.value.type // "unknown") 
+         ' >> inframap.mmd
+         
+         echo "```" >> inframap.mmd
+
+     - name: Publicar diagrama detallado Mermaid en GitHub Summary
+       run: |
+         echo "
+         cat infra/inframap.mmd >> $GITHUB_STEP_SUMMARY
+
+     - name: Terraform Apply
+       run: |
+         cd infra
+         terraform apply -auto-approve
+```
+</details>
+
 2. Completar las vistas para los demas modelos Cuenta, Movimiento y Tipo. (2ptos)
 3. Completar la documentación de las clases (DocFX). (2ptos)
 4. Generar el diagrama Mermaid correspondiente al proyecto (dotnet tool install --global dll2mmd) (2ptos)
