@@ -523,7 +523,8 @@ eb open
 ---
 ## Actividades Encargadas
 1. Construir el archivo terraform (archivo main.tf) para aprovisionar la insfraestructura mediante Github Actions (archivo infra.yml) en AWS (4ptos)
-   <details><summary>Terraform plan output: clic aqui
+   
+<details><summary>Infra/main.tf: clic aqui</summary>
 
 ```Yaml
 
@@ -602,7 +603,7 @@ Terraform will perform the following actions:
      + arn         = (known after apply)
      + description = "Aplicación en Elastic Beanstalk"
      + id          = (known after apply)
-     + name        = "eb-cuadros"
+     + name        = "eb-valverde"
      + tags_all    = (known after apply)
    }
 
@@ -734,7 +735,7 @@ Terraform will perform the following actions:
                # (1 unchanged attribute hidden)
            },
        ]
-     + name                   = "valverde-sg"
+     + name                   = "cuadros-sg"
      + name_prefix            = (known after apply)
      + owner_id               = (known after apply)
      + revoke_rules_on_delete = false
@@ -745,7 +746,7 @@ Terraform will perform the following actions:
 Plan: 4 to add, 0 to change, 0 to destroy.
 ```
 </details>
-
+  
 <details><summary>Infra/main.tf: clic aqui</summary>
 
 ```Yaml
